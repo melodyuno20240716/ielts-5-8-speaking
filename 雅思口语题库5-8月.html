@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅思口语题库 2026年5-8月</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #ff665c;
+    --coral-dark: #ef4c43;
+    --coral-light: #fff0ee;
+    --coral-mid: #ffddd9;
+    --navy: #18213e;
+    --navy-mid: #2e3d5c;
+    --gold: #f5a623;
+    --bg: #f7f5f0;
+    --card: #ffffff;
+    --text: #2a2a2a;
+    --muted: #7a7a8a;
+    --border: #e8e5df;
+    --line: #f0eee8;
+    --shadow: 0 2px 16px rgba(26,35,64,0.07);
+    --shadow-lg: 0 10px 36px rgba(26,35,64,0.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  header {
+    background: var(--navy);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.18);
+  }
+  .header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px 18px 0;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'DM Serif Display', 'Noto Sans SC', serif;
+    font-weight: 400;
+    font-size: clamp(1.24rem, 2.3vw, 1.75rem);
+    letter-spacing: 0;
+  }
+  h1 span { color: var(--coral); }
+  .stats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .stat {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 999px;
+    padding: 4px 11px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .stat.hot {
+    background: var(--coral);
+    border-color: var(--coral);
+  }
+  .tabs {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    flex: none;
+    padding: 11px 22px;
+    color: rgba(255,255,255,0.62);
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 0.94rem;
+    font-weight: 600;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+  }
+  .tab:hover { color: rgba(255,255,255,0.9); }
+  .tab.active {
+    color: #fff;
+    border-bottom-color: var(--coral);
+  }
+  main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 22px 16px 64px;
+  }
+  .filter-panel {
+    background: rgba(255,255,255,0.72);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 12px 18px;
+    align-items: center;
+  }
+  .filter-label {
+    color: var(--navy);
+    font-size: 0.84rem;
+    font-weight: 800;
+  }
+  .segmented {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .chip {
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.16s ease;
+  }
+  .chip:hover { background: var(--coral-light); }
+  .chip.active {
+    background: var(--coral);
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(255,102,92,0.18);
+  }
+  .search-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .search-wrap {
+    position: relative;
+  }
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b5b5bd;
+    font-size: 1.05rem;
+  }
+  .search-wrap input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 0 42px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    outline: none;
+    font: inherit;
+    color: var(--text);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .search-wrap input:focus {
+    border-color: var(--coral);
+    box-shadow: 0 0 0 4px rgba(255,102,92,0.12);
+  }
+  .clear-btn {
+    height: 44px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--navy);
+    color: #fff;
+    padding: 0 15px;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0 14px;
+  }
+  .section-label {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .result-count {
+    color: var(--navy-mid);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+  .group-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 24px 0 12px;
+  }
+  .group-header:first-child { margin-top: 0; }
+  .group-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .group-label {
+    color: var(--navy);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+  .group-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .card {
+    position: relative;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 16px 13px;
+    cursor: pointer;
+    min-height: 154px;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--cat-color);
+  }
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .card-title {
+    flex: 1;
+    color: var(--navy);
+    font-size: 0.98rem;
+    font-weight: 800;
+    line-height: 1.42;
+  }
+  .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cat-color);
+    margin-right: 7px;
+    vertical-align: middle;
+  }
+  .badge {
+    flex: none;
+    color: #fff;
+    background: var(--coral);
+    border-radius: 5px;
+    padding: 2px 7px;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+  }
+  .badge.old { background: var(--navy-mid); }
+  .badge.required { background: var(--gold); }
+  .card-en {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+    min-height: 2.2em;
+    margin-bottom: 10px;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .tag {
+    color: var(--navy-mid);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 7px;
+    font-size: 0.69rem;
+    line-height: 1.45;
+  }
+  .card-arrow {
+    margin-top: 12px;
+    color: var(--coral-dark);
+    font-size: 0.78rem;
+    font-weight: 800;
+    opacity: 0;
+    text-align: right;
+    transition: opacity 0.18s ease;
+  }
+  .card:hover .card-arrow { opacity: 1; }
+  .empty {
+    background: #fff;
+    border: 1.5px dashed var(--border);
+    border-radius: 14px;
+    padding: 52px 18px;
+    color: var(--muted);
+    text-align: center;
+    font-weight: 700;
+  }
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(20,25,40,0.55);
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+  }
+  .overlay.show {
+    display: flex;
+    animation: fadeIn 0.18s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal {
+    width: 100%;
+    max-width: 720px;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 22px 22px 0 0;
+    padding: 28px 24px 38px;
+    position: relative;
+    animation: slideUp 0.26s cubic-bezier(0.34,1.2,0.64,1);
+  }
+  @media (min-width: 760px) {
+    .overlay { align-items: center; padding: 24px; }
+    .modal { border-radius: 20px; max-height: 84vh; }
+  }
+  @keyframes slideUp {
+    from { transform: translateY(48px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .modal-close {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+  .modal-close:hover { background: var(--coral-mid); }
+  .modal-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--cat-text);
+    background: var(--cat-bg);
+    border-radius: 999px;
+    padding: 4px 11px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    margin-bottom: 11px;
+  }
+  .modal-title {
+    color: var(--navy);
+    font-size: 1.34rem;
+    font-weight: 800;
+    line-height: 1.38;
+    padding-right: 34px;
+    margin-bottom: 4px;
+  }
+  .modal-en {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .modal-section-title {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 18px 0 10px;
+  }
+  .cue-card {
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .cue-card ul, .question-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cue-card li {
+    color: var(--navy-mid);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    display: flex;
+    gap: 8px;
+  }
+  .cue-card li::before {
+    content: '◆';
+    color: var(--coral);
+    font-size: 0.56rem;
+    margin-top: 6px;
+    flex: none;
+  }
+  .question-item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 10px;
+    align-items: start;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 13px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--coral);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+  @media (max-width: 640px) {
+    .header-inner { padding-left: 14px; padding-right: 14px; }
+    .header-top { align-items: flex-start; flex-direction: column; gap: 10px; }
+    .stats { justify-content: flex-start; }
+    .tab { padding: 10px 17px; }
+    main { padding-left: 12px; padding-right: 12px; }
+    .filter-grid { grid-template-columns: 48px 1fr; gap: 10px 12px; }
+    .chip { padding: 6px 11px; }
+    .search-row { grid-template-columns: 1fr; }
+    .clear-btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <h1>雅思口语 <span>2026年 5-8月</span></h1>
+      <div class="stats">
+        <span class="stat hot">93 题</span>
+        <span class="stat">Part1 37</span>
+        <span class="stat">Part2&3 56</span>
+      </div>
+    </div>
+    <nav class="tabs" id="partTabs">
+      <button class="tab active" data-part="Part2">Part2 + Part3</button>
+      <button class="tab" data-part="Part1">Part1</button>
+      <button class="tab" data-part="全部">全部</button>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="filter-panel">
+    <div class="filter-grid">
+      <div class="filter-label">新旧</div>
+      <div class="segmented" id="statusFilters">
+        <button class="chip active" data-status="全部">全部</button>
+        <button class="chip" data-status="new">本季新题</button>
+        <button class="chip" data-status="old">保留话题</button>
+        <button class="chip" data-status="required">必考话题</button>
+      </div>
+      <div class="filter-label">主题</div>
+      <div class="segmented" id="catFilters">
+        <button class="chip active" data-cat="全部">全部</button>
+        <button class="chip" data-cat="人物">人物</button>
+        <button class="chip" data-cat="地点">地点</button>
+        <button class="chip" data-cat="经历">经历</button>
+        <button class="chip" data-cat="事物">事物</button>
+        <button class="chip" data-cat="其他">其他</button>
+      </div>
+    </div>
+    <div class="search-row">
+      <label class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" placeholder="搜索中文题目、英文题干或问题">
+      </label>
+      <button class="clear-btn" id="clearBtn">清空</button>
+    </div>
+  </section>
+  <div class="summary">
+    <div class="section-label" id="viewLabel">Part2 + Part3 / 全部</div>
+    <div class="result-count" id="resultCount"></div>
+  </div>
+  <div id="content"></div>
+</main>
+<div class="overlay" id="overlay">
+  <article class="modal" id="modal">
+    <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
+    <div id="modalBody"></div>
+  </article>
+</div>
+<script>
+const TOPICS = [{"id": "part1-new-1", "part": "Part1", "status": "new", "date": "5.28", "title": "Teachers", "en": "", "questions": ["Do you have a favorite teacher?", "Do you want to be a teacher in the future?", "Do you have a teacher from your past that you still remember?", "Are you still in touch with your primary school teachers?", "In what way has your favourite teacher helped you?", "Do you like your primary school teachers more than your high school teachers?"], "cue": [], "p3": [], "titleKey": "Teachers", "category": "人物"}, {"id": "part1-new-2", "part": "Part1", "status": "new", "date": "4.30", "title": "Social media", "en": "", "questions": ["Have you ever posted anything on social media?", "When did you start using social media?", "Do you think you spend too much time on social media?", "Do your friends use social media?", "What do people often do on social media?"], "cue": [], "p3": [], "titleKey": "Social media", "category": "事物"}, {"id": "part1-new-3", "part": "Part1", "status": "new", "date": "5.19", "title": "Music", "en": "", "questions": ["Do you like music?", "What kinds of music do you listen to?", "Do you prefer sad or happy music?", "Does happy music make you feel more excited?", "Have you taken any music classes?", "Do you listen to music while doing other things?"], "cue": [], "p3": [], "titleKey": "Music", "category": "事物"}, {"id": "part1-new-4", "part": "Part1", "status": "new", "date": "5.28", "title": "Tidiness", "en": "", "questions": ["Do you like to keep things tidy?", "Did you use to keep your room tidy as a child?", "Are you a tidy person now?", "How do you keep your work or study space tidy?", "Do you think that it is necessary to be tidy?", "What do you think of those who don't care about tidiness?", "What do you think of those who are overly concerned about tidiness?"], "cue": [], "p3": [], "titleKey": "Tidiness", "category": "事物"}, {"id": "part1-new-5", "part": "Part1", "status": "new", "date": "5.13", "title": "Websites", "en": "", "questions": ["What kinds of websites do you often visit?", "What is your favourite website?", "Are there any changes to the websites you often visit?", "What kinds of websites are popular in your country?", "Do you prefer getting information from websites or books?", "Would you like to have your own website?"], "cue": [], "p3": [], "titleKey": "Websites", "category": "事物"}, {"id": "part1-new-6", "part": "Part1", "status": "new", "date": "5.6", "title": "Watch", "en": "", "questions": ["Do you wear a watch?", "Have you ever got a watch as a gift?", "Why do some people wear expensive watches?", "Do you think it is important to wear a watch? Why?"], "cue": [], "p3": [], "titleKey": "Watch", "category": "事物"}, {"id": "part1-new-7", "part": "Part1", "status": "new", "date": "5.6", "title": "Shopping", "en": "", "questions": ["Do you like shopping?", "How often do you go shopping?", "Do you prefer online shopping or in-store shopping?", "Do you compare prices when you shop? Why?", "Is it difficult for you to make choices when you shop?", "Do you think expensive products are always better than cheaper ones?", "Have you ever returned anything you bought online?"], "cue": [], "p3": [], "titleKey": "Shopping", "category": "经历"}, {"id": "part1-new-8", "part": "Part1", "status": "new", "date": "5.6", "title": "Feeling bored", "en": "", "questions": ["Do you often feel bored?", "Did you ever find school boring when you were a child?", "What sort of things do you find most boring now?", "What do you do to stop yourself feeling bored?", "When would you feel bored?", "What do you do when you feel bored?", "Do you think childhood is boring or adulthood is boring?"], "cue": [], "p3": [], "titleKey": "Feeling bored", "category": "经历"}, {"id": "part1-new-9", "part": "Part1", "status": "new", "date": "5.28", "title": "Parks", "en": "", "questions": ["Did you like going to parks as a child?", "Do you still like going to parks now?", "Would you like to see more parks in your city?", "Are there any parks you want to go to in the future?", "Would you prefer to play in a personal garden or public garden?", "How are the parks today different from those you visited as a kid?", "What do you like to do when visiting a park?", "Would you like to play in a public garden or park?"], "cue": [], "p3": [], "titleKey": "Parks", "category": "地点"}, {"id": "part1-new-10", "part": "Part1", "status": "new", "date": "5.6", "title": "Cars", "en": "", "questions": ["Did you enjoy traveling by car when you were a kid?", "What types of cars do you like?", "Do you prefer to be a driver or a passenger?", "What do you usually do when there is a traffic jam?", "Do you think car colours are important?"], "cue": [], "p3": [], "titleKey": "Cars", "category": "事物"}, {"id": "part1-new-11", "part": "Part1", "status": "new", "date": "5.6", "title": "Outer space and stars", "en": "", "questions": ["Have you ever learnt about outer space and stars?", "Do you enjoy watching science-fiction films/movies set in space?", "Do you want to know more about outer space?", "Would you like to go into outer space in the future?"], "cue": [], "p3": [], "titleKey": "Outer space and stars", "category": "事物"}, {"id": "part1-new-12", "part": "Part1", "status": "new", "date": "5.6", "title": "Science", "en": "", "questions": ["Do you like science?", "When did you start to learn about science?", "Which science subject is interesting to you?", "What kinds of interesting things have you done with science?", "Do you like watching science TV programs?", "Do Chinese people often visit science museums?"], "cue": [], "p3": [], "titleKey": "Science", "category": "事物"}, {"id": "part1-new-13", "part": "Part1", "status": "new", "date": "5.5", "title": "Mirrors", "en": "", "questions": ["Do you like looking at yourself in the mirror? How often?", "Have you ever bought mirrors?", "Do you usually take a mirror with you?", "Would you use mirrors to decorate your room?"], "cue": [], "p3": [], "titleKey": "Mirrors", "category": "事物"}, {"id": "part1-new-14", "part": "Part1", "status": "new", "date": "5.13", "title": "Telling Jokes", "en": "", "questions": ["Are you good at telling jokes?", "Do your friends like to tell jokes?", "Do you like to watch comedies?", "Have you ever watched a live show?", "Are comedy shows popular in your country?"], "cue": [], "p3": [], "titleKey": "Telling Jokes", "category": "事物"}, {"id": "part1-new-15", "part": "Part1", "status": "new", "date": "5.7", "title": "Headphone", "en": "", "questions": ["Do you use headphones?", "How often do you wear headphones?", "Do you think headphones are useful?", "Are headphones popular in your country?", "In what situations should people not wear headphones?"], "cue": [], "p3": [], "titleKey": "Headphone", "category": "事物"}, {"id": "part1-new-16", "part": "Part1", "status": "new", "date": "5.7", "title": "Singing", "en": "", "questions": ["Did you like singing when you were a child?", "Do you like singing now?", "Do you enjoy singing in the car?", "Do you like listening to other people sing?", "Did you learn to sing when you were at school?"], "cue": [], "p3": [], "titleKey": "Singing", "category": "事物"}, {"id": "part1-new-17", "part": "Part1", "status": "new", "date": "5.13", "title": "Clothing", "en": "", "questions": ["What kind of clothes do you like to wear?", "Do you prefer to wear comfortable and casual clothes or formal clothes?", "Do you like wearing T-shirts?", "Do you spend a lot of time choosing clothes?", "Do you wear clothes of different styles on weekdays and weekends?", "What colour clothing do you like?"], "cue": [], "p3": [], "titleKey": "Clothing", "category": "事物"}, {"id": "part2-new-1", "part": "Part2", "status": "new", "date": "5.15", "title": "喜欢或不喜欢的高建筑", "en": "Describe a tall building you like or dislike", "questions": [], "cue": ["What it is used for", "Where it is", "What it looks like", "And explain why you like/dislike it"], "p3": ["Are there many tall buildings in your country?", "What are the differences between those tall buildings in your country?", "Why are different places laid out and designed differently?", "What are the advantages of living in tall buildings?", "Why do some people like to remodel and decorate their homes themselves?", "What kind of interior design style do most people like?"], "titleKey": "喜欢或不喜欢的高建筑", "category": "地点"}, {"id": "part2-new-2", "part": "Part2", "status": "new", "date": "5.28", "title": "有趣视频", "en": "Describe an interesting video", "questions": [], "cue": ["When and where you watched it", "What it is about", "Why you watched it", "And explain how you feel about it"], "p3": ["What kind of videos do people in your country like to watch?", "Which is more helpful, watching videos or reading books?", "What skills can people learn from watching videos?", "What are the advantages of online learning?", "Are there any differences between the videos that young people and old people like to watch?", "Are there any differences between the videos that young men and young women like to watch?", "What makes a video go viral online?"], "titleKey": "有趣视频", "category": "事物"}, {"id": "part2-new-3", "part": "Part2", "status": "new", "date": "5.28", "title": "早起经历", "en": "Describe a time when you got up early", "questions": [], "cue": ["When it was", "What you did", "Why you got up early", "And how you felt about it"], "p3": ["Do you know anyone who likes to get up early?", "Why do people get up early?", "What kinds of occasions need people to arrive early?", "Why do some people like to stay up late?", "Is it good to arrive early in any situation?", "What kind of people like getting up early?", "Is the early morning the best part of the day?", "Why do some people think it’s important to be on time and others don’t?"], "titleKey": "早起经历", "category": "经历"}, {"id": "part2-new-4", "part": "Part2", "status": "new", "date": "5.14", "title": "无聊的地方", "en": "Describe a boring place", "questions": [], "cue": ["Where it is", "Who you went there with", "What you did there", "And explain why you think it is a boring place"], "p3": ["Why do most children think education is boring?", "Why aren't young people willing to listen to the experiences of older people?", "What can people do when they feel bored?", "Why are some teachers' classes boring? Are there any solutions?", "Why do some young people feel bored when talking with old people?", "Do most people think news about celebrities is boring?"], "titleKey": "无聊的地方", "category": "地点"}, {"id": "part2-new-5", "part": "Part2", "status": "new", "date": "5.6", "title": "发小", "en": "Describe a friend from your childhood", "questions": [], "cue": ["Who he/she is", "Where and how you met each other", "What you often did together", "And explain what made you like him/her"], "p3": ["Do you still keep in touch with your friends from childhood? Why or why not?", "How important is a childhood friendship to children?", "What do you think of communicating with others through social media?", "Do you think online communication through social media will replace face-to-face communication?", "What's the difference between talking to friends and family?", "Has technology changed people's friendships? How?"], "titleKey": "发小", "category": "人物"}, {"id": "part2-new-6", "part": "Part2", "status": "new", "date": "5.11", "title": "喜欢在家/花园种菜的人", "en": "Describe a person who loves to grow plants (e.g. vegetables, flowers) at home or in the garden", "questions": [], "cue": ["Who this person is", "What plants he/she grows", "How he/she grows the plants", "And explain why he/she loves growing plants"], "p3": ["What are the advantages of growing vegetables or flowers at home?", "Do many people grow vegetables or flowers at home in your country?", "Is it easy to grow plants at home?", "Why do some people like to grow plants?", "Why do some people prefer to grow their own fruits and vegetables instead of buying them from the market?", "Do you think students should learn to grow plants?"], "titleKey": "喜欢在家/花园种菜的人", "category": "人物"}, {"id": "part2-new-7", "part": "Part2", "status": "new", "date": "5.6", "title": "想颁布的新法律", "en": "Describe a new law you would like to introduce in your country", "questions": [], "cue": ["What law it is", "What changes this law brings", "Whether this new law will be popular", "How you came up with the new law", "And explain how you feel about this new law"], "p3": ["What rules should students follow at school?", "Do people in your country usually obey the law?", "What kinds of behavior are considered as good behavior?", "Do you think children can learn about the law outside of school?", "What are the benefits for people to obey rules?", "How can parents teach children to obey rules?"], "titleKey": "想颁布的新法律", "category": "事物"}, {"id": "part2-new-8", "part": "Part2", "status": "new", "date": "6.11", "title": "想从事医疗行业的人", "en": "Describe a person you know who would like to choose a career in the medical field (e.g. a doctor, a nurse)", "questions": [], "cue": ["When you knew him/her", "When he/she started to think about that", "What he/she would like to do", "And explain why he/she would like to choose this career"], "p3": ["Do you think being a doctor is easy or difficult?", "Do you think learning biology is interesting for children?", "Why do some children want to become doctors?", "Do you think governments should put a large amount of money into medical research?", "Why do some doctors get paid more than others?", "Do you think doctors should be paid more?"], "titleKey": "想从事医疗行业的人", "category": "人物"}, {"id": "part2-new-9", "part": "Part2", "status": "new", "date": "5.14", "title": "商业上很成功的人", "en": "Describe a person you know who has a successful business", "questions": [], "cue": ["Who this person is", "How you got to know him/her", "Why and how he/she started the business", "What business he/she does", "And explain why you think the business is successful"], "p3": ["Why do some people start their own business?", "Should governments provide financial support to start-ups?", "Do most people prefer shopping at big stores or small stores?", "What makes a business successful?", "What makes a business fail?", "Is it easy to set up a new business in your country?"], "titleKey": "商业上很成功的人", "category": "人物"}, {"id": "part2-new-10", "part": "Part2", "status": "new", "date": "5.28", "title": "近期改变的计划", "en": "Describe a plan that you had to change recently", "questions": [], "cue": ["When this happened", "What made you change the plan", "What the new plan was", "And how you felt about the change"], "p3": ["Do people often change their plans?", "Would you tell others if you change your plan?", "Why do you think parents still make plans for their children nowadays?", "How does technology help people make plans?", "What kind of plans do people often make?", "Do you think people like the process of making plans more, or the moment of carrying them out?", "How would you tell your friends when you must change plans?", "What are the common reasons when people need to change plans?", "What kind of plans are practical?"], "titleKey": "近期改变的计划", "category": "事物"}, {"id": "part2-new-11", "part": "Part2", "status": "new", "date": "5.16", "title": "在团队中工作", "en": "Describe a time when you worked in a group", "questions": [], "cue": ["What you did", "Who you worked with", "What problems you faced", "And explain why you worked in the group"], "p3": ["Why do some people prefer to work by themselves?", "What should a leader do to make team members want to follow him or her?", "Should students learn to do group work?", "What group tasks are there in schools?", "What advantages are there for students experiencing teamwork at school?", "How can you tell if a person is a good leader?"], "titleKey": "在团队中工作", "category": "经历"}, {"id": "part2-new-12", "part": "Part2", "status": "new", "date": "5.22", "title": "长期追求/目标", "en": "Describe a long-term goal/ambition you would like to achieve", "questions": [], "cue": ["How long you have had this goal/ambition", "What it is", "How you will achieve it", "And explain why you set it"], "p3": ["What kinds of ambitions do people have?", "Why should parents encourage children to have ambitions?", "Should parents interfere with their children's ambitions?", "Is there any difference between children's ambitions and those of grown-ups?", "What goals do young people usually have?", "Why are young people ambitious for higher positions?", "What should people do to achieve their goals?"], "titleKey": "长期追求/目标", "category": "人物"}, {"id": "part2-new-13", "part": "Part2", "status": "new", "date": "5.28", "title": "特殊场合下吃的食物", "en": "Describe a kind of food that you ate at special occasions", "questions": [], "cue": ["What it is", "What occasion it was", "Why you would like to eat it", "And explain how you feel about it"], "p3": ["Why do people eat special food on special occasions or festivals?", "What are the differences between everyday food and festival food?", "Are there any differences between the food people eat today and the food people ate in the past?", "Do people today prefer eating at home or in a restaurant?", "What kinds of food are popular in your country?", "Do people in your country like eating foreign food?"], "titleKey": "特殊场合下吃的食物", "category": "事物"}, {"id": "part2-new-14", "part": "Part2", "status": "new", "date": "6.6", "title": "看过的现场比赛", "en": "Describe a live sports event you watched and liked", "questions": [], "cue": ["What it was", "When and where you watched it", "Who you watched it with", "And explain why you liked it"], "p3": ["Why do some people like to watch sports events?", "Where do people normally watch sports events?", "What are the advantages of watching sports events online?", "What are the main differences between watching a sports event live in a stadium and watching it on TV?", "What kinds of sports events are most popular to watch in your country?", "What types of sports matches are suitable for children to watch?", "What types of sports matches are suitable for children to attend?", "Why do some people spend a lot going to other countries to watch sports events?"], "titleKey": "看过的现场比赛", "category": "经历"}, {"id": "part2-new-15", "part": "Part2", "status": "new", "date": "5.11", "title": "名人广告", "en": "Describe an advertisement with a famous person in it", "questions": [], "cue": ["ho the person is", "Where you can see it", "What the advertisement is about", "And explain how you feel about the advertisement"], "p3": ["hat are the advantages and disadvantages of advertisements?", "Why are many advertisements endorsed by celebrities? How useful are they?", "What is the most important factor in anadvertisement?", "Why are some advertisements boring?", "Is advertising important for a company? Why?", "Which is more effective, online advertising or offline advertising?"], "titleKey": "名人广告", "category": "事物"}, {"id": "part2-new-16", "part": "Part2", "status": "new", "date": "5.27", "title": "当地新闻", "en": "Describe a piece of local news that people are interested in", "questions": [], "cue": ["What it was about", "Where you saw/heard it", "Who was involved", "And explain why people were interested in it"], "p3": ["Are there a lot of people talking about local news?", "Do young people or the elderly care more about local news?", "Do people in your country prefer following local news or national news?", "Why do some people want to be very involved in their community?", "Do you think local communities were stronger in the past than they are today?", "Do you think it is important to have a national identity?", "How can people develop their national identity?"], "titleKey": "当地新闻", "category": "经历"}, {"id": "part2-new-17", "part": "Part2", "status": "new", "date": "5.28", "title": "电子产品故障", "en": "Describe a time when you had a problem with using an electronic device", "questions": [], "cue": ["When it happened", "Where it happened", "What the problem was", "And explain how you solved the problem at last"], "p3": ["Why are people keen on buying new electronic devices?", "What impact do electronic devices have on people?", "What kinds of technology products do people use at home?", "What are the advantages and disadvantages of students using technology products?", "Do you think young children today are over-reliant on technology products?", "Should parents limit their children's screen time?", "Why do many young people spend so much time looking at screens?"], "titleKey": "电子产品故障", "category": "经历"}, {"id": "part2-new-18", "part": "Part2", "status": "new", "date": "5.8", "title": "重要决定", "en": "Describe an important decision that you made", "questions": [], "cue": ["What the decision was", "How you made your decision", "What the results of your decision were", "And explain why it was important"], "p3": ["Do you think children sometimes have to make important decisions?", "What important decisions do teenagers need to make after graduation?", "Who can children turn to for help when making a decision?", "Do you think advertisements can influence our decisions when shopping?", "Do you think the influence of advertising is good?", "How do people usually make important decisions?"], "titleKey": "重要决定", "category": "事物"}, {"id": "part2-new-19", "part": "Part2", "status": "new", "date": "5.15", "title": "擅长学习和说语言的人", "en": "Describe a person who is good at learning and speaking new languages", "questions": [], "cue": ["How you got to know him/her", "How he/she learns a new language", "What languages he/she can speak", "And explain how you feel about him/her"], "p3": ["Are there many people who can speak foreign languages in your country?", "Does speaking other languages help at work?", "Do people learn any languages other than English?", "Why is it easier for children to learn new things than for adults?", "How do people learn new things?", "What is the most important thing for learning a language well?"], "titleKey": "擅长学习和说语言的人", "category": "人物"}, {"id": "part2-new-20", "part": "Part2", "status": "new", "date": "5.20", "title": "长时间未收到回复", "en": "Describe a time when you sent a message or an email to someone but received no reply for a long time", "questions": [], "cue": ["Who you sent it to", "What the message/email was about", "Whether you finally received the reply", "And explain how you felt about the experience"], "p3": ["In what situations do people spend a long time responding to others' messages?", "In what situations do people not respond to messages right away?", "What would you do if you haven't received a reply after sending out a message?", "Why do some people prefer sending a message instead of making a call?", "Are you more polite when sending a message to a stranger than to a friend?", "Why do some people feel angry when others don't reply to their message?", "Why do some people think it’s important to be on time and others don’t?"], "titleKey": "长时间未收到回复", "category": "人物"}, {"id": "part2-new-21", "part": "Part2", "status": "new", "date": "5.11", "title": "遇到的科技问题", "en": "Describe a challenging technological problem you faced", "questions": [], "cue": ["What the problem was", "When and where you faced it", "How challenging it was", "And explain how you solved it"], "p3": ["What are the advantages and disadvantages of Al?", "Do you think people today should learn about Al technology?", "Should children learn to use Al?", "How can Al help in our lives?", "Do you think students are overly reliant on AI?", "What can teachers do to stop students relying too much on Al?"], "titleKey": "遇到的科技问题", "category": "经历"}, {"id": "part2-new-22", "part": "Part2", "status": "new", "date": "5.28", "title": "推荐旅行过的地方", "en": "Describe a place you have travelled to that you would like to recommend to others", "questions": [], "cue": ["What it is", "Where it is", "What you saw and did there", "And explain why you would like to recommend it to others"], "p3": ["Where do people in your country often go for holidays?", "Where do young people in your country often go for holidays?", "What is the ideal length for a holiday?", "How do people usually plan holidays?", "Is it important to plan a holiday ahead?", "Why do many countries try to attract people to visit?", "How do people decide when to travel?", "What are the benefits for cities of having lots of tourists?", "What are the disadvantages for people living in popular tourist cities?"], "titleKey": "推荐旅行过的地方", "category": "地点"}, {"id": "part2-new-23", "part": "Part2", "status": "new", "date": "5.23", "title": "喜欢拜访但不想住的家", "en": "Describe a home that you like to visit but do not want to live in", "questions": [], "cue": ["Where it is", "What it is like", "Why you like to visit it", "And explain why you would not like to live there"], "p3": ["Do Chinese people like to visit others’ homes?", "What do Chinese people do when they visit others?", "What kind of place do people in your country like to live in?", "What’s the difference between homes in cities and those in the countryside?", "What kind of gifts do people usually bring when they visit others?", "How often do you visit your relatives or friends?"], "titleKey": "喜欢拜访但不想住的家", "category": "地点"}, {"id": "part2-new-24", "part": "Part2", "status": "new", "date": "5.12", "title": "包含动物的故事或书", "en": "Describe a story/book with animals in it", "questions": [], "cue": ["What animals are in it", "What the story/book is about", "Why you read the story/book", "And explain what you think of this story/book"], "p3": ["Should schools teach children about animals?", "Some people think pets should not be kept in cities. What do you think?", "Many people regard pets as members of their family. What do you think?", "Do many people keep pets in your country?", "What are the advantages of keeping a pet?", "Why do people always tell children stories with animals?"], "titleKey": "包含动物的故事或书", "category": "事物"}, {"id": "part2-new-25", "part": "Part2", "status": "new", "date": "5.13", "title": "别人帮助解决问题", "en": "Describe a time when a person did something to help you solve a problem", "questions": [], "cue": ["Who the person is", "What the problem was", "How he/she helped you", "And explain how you felt about the experience"], "p3": ["How important is it for schools to help children become smarter?", "待补充"], "titleKey": "别人帮助解决问题", "category": "经历"}, {"id": "part2-new-26", "part": "Part2", "status": "new", "date": "5.23", "title": "想颁布的环保法律", "en": "Describe an environmental law you would like your country to introduce", "questions": [], "cue": ["What law it should be", "Why people should follow the law", "Whether the law will be popular", "And explain how you feel about this law"], "p3": ["What kinds of rules do schools in China have?", "How does technology affect the law?", "Will there be a law that is universally accepted?", "What environmental laws does your country already have?"], "titleKey": "想颁布的环保法律", "category": "事物"}, {"id": "part2-new-27", "part": "Part2", "status": "new", "date": "5.23", "title": "改变重要想法", "en": "Describe a time when you changed an important opinion of yours", "questions": [], "cue": ["When you changed your opinion", "What the original opinion was", "Why you changed it", "And explain how you felt about the experience"], "p3": ["When do most children begin to have their own opinions?", "Whose opinions are more important to children, their parents' or teachers'?", "Do children communicate more with teachers or with parents?", "Who do young people like to share opinions with?", "待补充"], "titleKey": "改变重要想法", "category": "经历"}, {"id": "part2-new-28", "part": "Part2", "status": "new", "date": "5.23", "title": "克服困难成功的人", "en": "Describe a person who met difficulties but succeeded", "questions": [], "cue": ["Who this person is", "What difficulties he met", "How he overcame the difficulties", "And explain how you feel about him"], "p3": ["In your country, what industry is it easier to be successful in?", "What's the difference between ordinary people and successful people?", "What are the factors leading to people's success?", "待补充"], "titleKey": "克服困难成功的人", "category": "人物"}, {"id": "part2-new-29", "part": "Part2", "status": "new", "date": "6.11", "title": "近期改变", "en": "Describe a change that you made recently", "questions": [], "cue": ["What the change was", "What caused the change", "What you did for the change", "And explain how you feel about the change"], "p3": ["Do you think it is good to change one's daily routine?", "Do you think it is good to change jobs?", "Is it good for people to get a job promotion?", "Do people often make plans around their regular routines?", "Who tends to change their daily routine more, young people or old people?", "待补充"], "titleKey": "近期改变", "category": "经历"}, {"id": "part1-required-1", "part": "Part1", "status": "required", "date": "", "title": "Work/ Study", "en": "", "questions": ["Do you work or are you a student?", "What do you do?", "Why did you choose to do this type of work?", "Do you like your job? Why/Why not?", "What do you find the most interesting about the work you do? Why?", "Will you need to do any more study for your job?", "Where do you work?", "Is it a good place to work?", "Would you like the place where you work to make any changes?", "What technology do you use at work?", "What subjects are you studying?", "Why did you choose to study this subject?", "What do you like about your course?", "What would you like to do after you finish your course?", "Do you prefer to study in the mornings or in the afternoons?", "Do you think you will miss being a student once you finish your studies? Why/why not?", "What technology do you use when you study?", "Are you enjoying your studies at the moment? Why/why not?"], "cue": [], "p3": [], "titleKey": "Work/ Study", "category": "事物"}, {"id": "part1-required-2", "part": "Part1", "status": "required", "date": "", "title": "Hometown", "en": "", "questions": ["Where is your hometown?", "What kind of place is it?", "How long have you lived there?", "What is one of the best things about living there?", "Is there anything you dislike about it?", "Do you know many people who live nearby?", "Do you have any relatives who still live in your hometown? Why/Why not?", "Do you often go back to visit your hometown? Why/Why not?", "Can you describe your hometown a little bit?", "Do you like it?", "Did you like living there?", "Do you think you'll continue living there for a long time?"], "cue": [], "p3": [], "titleKey": "Hometown", "category": "地点"}, {"id": "part1-required-3", "part": "Part1", "status": "required", "date": "", "title": "Home/Accommodation", "en": "", "questions": ["Do you live in a house or an apartment?", "Do you prefer living in a house or an apartment?", "Do you live with anyone else? Why/Why not?", "Do you like the place you currently live in? Why/Why not?", "What is your favourite room in your house/apartment?", "Would you like to change anything in your house/apartment?", "Would you like to move to a different house/apartment in the future?", "What do you think makes a place comfortable to live in?", "Can you describe the place where you live?", "How long have you lived there?", "Who do you live with?", "Do you plan to live there for a long time?", "What is the difference between where you are living now and where you have lived in the past?", "What do you usually do in your house/flat/room?", "Which room does your family spend most of the time in?", "Are there transport facilities to your home very good?", "What kind of housing or accommodation do you live in?", "Please describe the room you live in."], "cue": [], "p3": [], "titleKey": "Home/Accommodation", "category": "地点"}, {"id": "part1-required-4", "part": "Part1", "status": "required", "date": "", "title": "The area you live in", "en": "", "questions": ["Where are you living at the moment?", "What kind of area is it?", "How long have you lived there?", "Do you know any of your neighbours?", "What do you like about living there?", "What changes have taken place in the area recently?", "Would you like to change anything about your area? Why/ Why not?", "Would you like to continue living there in the future? Why/ Why not?"], "cue": [], "p3": [], "titleKey": "The area you live in", "category": "地点"}, {"id": "part1-required-5", "part": "Part1", "status": "required", "date": "", "title": "The city you live in", "en": "", "questions": ["What city do you live in?", "Do you like this city? why?", "How long have you lived in this city?", "Are there big changes in this city?", "Is this city your permanent residence?", "Are there people of different ages living in this city?"], "cue": [], "p3": [], "titleKey": "The city you live in", "category": "地点"}, {"id": "part1-old-1", "part": "Part1", "status": "old", "date": "", "title": "Pets and Animals", "en": "", "questions": ["What's your favourite animal? Why?", "Have you ever had a pet before?", "Where do you prefer to keep your pet, indoors or outdoors?", "What is the most popular animal in China?", "Have you ever been to a zoo？"], "cue": [], "p3": [], "titleKey": "Pets and Animals", "category": "事物"}, {"id": "part1-old-2", "part": "Part1", "status": "old", "date": "", "title": "Food", "en": "", "questions": ["What is your favourite food?", "What kind of food did you like when you were young?", "Do you eat different foods at different times of the year?", "Has your favourite food changed since you were a child?"], "cue": [], "p3": [], "titleKey": "Food", "category": "事物"}, {"id": "part1-old-3", "part": "Part1", "status": "old", "date": "", "title": "Walking", "en": "", "questions": ["Do you walk a lot?", "Did you often go outside to have a walk when you were a child?", "Why do people like to walk in parks?", "Where would you like to take a long walk if you had the chance?", "Where did you go for a walk lately?"], "cue": [], "p3": [], "titleKey": "Walking", "category": "经历"}, {"id": "part1-old-4", "part": "Part1", "status": "old", "date": "", "title": "Morning time", "en": "", "questions": ["Do you like getting up early in the morning?", "What do you usually do in the morning?", "What did you do in the morning when you were little? Why?", "Are there any differences between what you do in the morning now and what you did in the past?", "Do you spend your mornings doing the same things on both weekends and weekdays? Why?"], "cue": [], "p3": [], "titleKey": "Morning time", "category": "事物"}, {"id": "part1-old-5", "part": "Part1", "status": "old", "date": "", "title": "Gifts", "en": "", "questions": ["Have you ever sent handmade gifts to others?", "Have you ever received a great gift?", "What do you consider when choosing a gift?", "Do you think you are good at choosing gifts？", "What gift have you received recently?"], "cue": [], "p3": [], "titleKey": "Gifts", "category": "事物"}, {"id": "part1-old-6", "part": "Part1", "status": "old", "date": "", "title": "Reading", "en": "", "questions": ["Do you like reading?", "Do you prefer to read on paper or on a screen?", "When do you need to read carefully, and when not?", "Do you prefer scanning or detailed reading?"], "cue": [], "p3": [], "titleKey": "Reading", "category": "经历"}, {"id": "part1-old-7", "part": "Part1", "status": "old", "date": "", "title": "Sports team", "en": "", "questions": ["Have you ever been part of a sports team?", "Are team sports popular in your culture?", "Do you like to watch team games? Why?", "What are the differences between team sports and individual sports?"], "cue": [], "p3": [], "titleKey": "Sports team", "category": "经历"}, {"id": "part1-old-8", "part": "Part1", "status": "old", "date": "", "title": "Hobby", "en": "", "questions": ["Do you have any hobbies?", "Did you have any hobbies when you were a child?", "Do you have a hobby that you've had since childhood?", "Do you have the same hobbies as your family members?"], "cue": [], "p3": [], "titleKey": "Hobby", "category": "事物"}, {"id": "part1-old-9", "part": "Part1", "status": "old", "date": "", "title": "Typing", "en": "", "questions": ["Do you prefer typing or handwriting?", "Do you type on a desktop or laptop keyboard every day?", "When did you learn how to type on a keyboard?", "How do you improve your typing?"], "cue": [], "p3": [], "titleKey": "Typing", "category": "事物"}, {"id": "part1-old-10", "part": "Part1", "status": "old", "date": "", "title": "Building", "en": "", "questions": ["Are there tall buildings near your home?", "Do you take photos of buildings?", "Is there a building that you would like to visit?", "Do you want to live in a tall building?"], "cue": [], "p3": [], "titleKey": "Building", "category": "事物"}, {"id": "part1-old-11", "part": "Part1", "status": "old", "date": "", "title": "Childhood activities", "en": "", "questions": ["What are your favourite activities?", "What were your favourite activities when you were a child?", "Did you prefer to do activities alone or with a group of people when you were a child?", "Are there any differences between the activities you liked when you were a child and those you like now?"], "cue": [], "p3": [], "titleKey": "Childhood activities", "category": "经历"}, {"id": "part1-old-12", "part": "Part1", "status": "old", "date": "", "title": "Scenery", "en": "", "questions": ["Do you look out the window at the scenery when travelling by bus or car?", "Do you prefer the mountains or the sea?", "Do you like to take pictures of the scenery?", "What are the most beautiful sights you have seen while traveling?"], "cue": [], "p3": [], "titleKey": "Scenery", "category": "事物"}, {"id": "part1-old-13", "part": "Part1", "status": "old", "date": "", "title": "View", "en": "", "questions": ["Do you like taking pictures of different views?", "Do you prefer views in urban areas or rural areas?", "Do you prefer views in your own country or in other countries?", "Have you ever seen an unforgettable and beautiful view or scenery?"], "cue": [], "p3": [], "titleKey": "View", "category": "地点"}, {"id": "part1-old-14", "part": "Part1", "status": "old", "date": "", "title": "Life Stages", "en": "", "questions": ["What did you often do with your friends in your childhood?", "What do you think is the most important at the moment?", "Do you have any plans for the next five years?", "How do people remember each stage of their lives?", "Do you enjoy being the age you are now?", "At what age do you think people are the happiest?"], "cue": [], "p3": [], "titleKey": "Life Stages", "category": "经历"}, {"id": "part1-old-15", "part": "Part1", "status": "old", "date": "", "title": "Daily routine", "en": "", "questions": ["What is your daily study routine?", "Have you ever changed your routine?", "Do you think it is important to have a daily routine for your study?", "What part of your day do you like best?", "Do you often go to bed late or early?"], "cue": [], "p3": [], "titleKey": "Daily routine", "category": "事物"}, {"id": "part2-old-1", "part": "Part2", "status": "old", "date": "", "title": "完美工作", "en": "Describe a perfect job you would like to have in the future", "questions": [], "cue": ["What it is", "How you knew it", "What you need to learn to get this job", "And explain why you think it is a perfect job for you"], "p3": ["What kind of job can be called a 'dream job'?", "What jobs do children want to do when they grow up?", "Do people's ideal jobs change as they grow up?", "What should people consider when choosing jobs?", "ls salary the main reason people choose a certain job?", "What kind of jobs are the most popular in your country?"], "titleKey": "完美工作", "category": "事物"}, {"id": "part2-old-2", "part": "Part2", "status": "old", "date": "", "title": "想见的名人", "en": "Describe a famous person you would like to meet", "questions": [], "cue": ["Who he/she is", "How you knew him/her", "How/where you would like to meet him/her", "And explain why you would like to meet him/her"], "p3": ["What are the advantages and disadvantages of being a famous child?", "What can today's children do to become famous?", "What can children do with their fame?", "Do people become famous because of their talent?", "Is it easy to become famous in your country?", "Do you want to be a famous person?"], "titleKey": "想见的名人", "category": "人物"}, {"id": "part2-old-3", "part": "Part2", "status": "old", "date": "", "title": "禁止用手机的场合", "en": "Describe an occasion when you were not allowed to use your mobile phone", "questions": [], "cue": ["When it was", "Where it was", "Why you were not allowed to use your mobile phone", "And how you felt about it"], "p3": ["How do young and old people use mobile phones differently?", "What positive and negative impact do mobile phones have on friendship?", "ls it a waste of time to take pictures with mobile phones?", "Do you think it is necessary to have laws on the use of mobile phones?", "What are examples of good and poor phone manners?", "How does the internet benefit people?"], "titleKey": "禁止用手机的场合", "category": "经历"}, {"id": "part2-old-4", "part": "Part2", "status": "old", "date": "", "title": "微笑的场合", "en": "Describe an occasion when many people were smiling", "questions": [], "cue": ["When it happened", "Who you were with", "What happened", "And explain why most people were smiling"], "p3": ["Do you think people who like to smile are more friendly?", "Why do most people smile in photographs?", "Do women smile more than men? Why?", "Do people smile more when they are younger or older?", "Is smiling important in your culture?", "Are there any occasions when people need to pretend to smile?"], "titleKey": "微笑的场合", "category": "经历"}, {"id": "part2-old-5", "part": "Part2", "status": "old", "date": "", "title": "为家人骄傲", "en": "Describe a time when you felt proud of a family member", "questions": [], "cue": ["When it happened", "Who the person is", "What the person did", "And explain why you felt proud of him/her"], "p3": ["When would parents feel proud of their children?", "Should parents reward children? Why and how?", "ls it good to reward children too often? Why?", "On what occasions would adults be proud of themselves?", "Do rewards help a child become better?", "What do you think about children working hard just for grades?"], "titleKey": "为家人骄傲", "category": "事物"}, {"id": "part2-old-6", "part": "Part2", "status": "old", "date": "", "title": "给别人建议", "en": "Describe a time when you gave advice to others", "questions": [], "cue": ["When it was", "To whom you gave the advice", "What the advice was", "And explain why you gave the advice"], "p3": ["Should people prepare before giving advice?", "ls it good to ask advice from strangers online?", "What are the personalities of people whose job is to give advice to others?", "What are the problems if you ask too many people for advice?", "Why do some people think it is better to ask for advice from friends than from parents?", "When would old people ask young people for advice?"], "titleKey": "给别人建议", "category": "经历"}, {"id": "part2-old-7", "part": "Part2", "status": "old", "date": "", "title": "喜欢画画的孩子", "en": "Describe a child who loves drawing/painting", "questions": [], "cue": ["Who he/she is", "How/when you knew him/her", "How often he/she draws/paints", "And explain why you think he/she loves drawing/painting"], "p3": ["What is the right age for a child to learn drawing?", "Why do most children draw more often than adults do?", "Why do some people visit galleries or museums instead of viewing artworks online?", "Do you think galleries and museums should be free of charge?", "How do artworks inspire people?", "What are the differences between reading a book and visiting a museum?"], "titleKey": "喜欢画画的孩子", "category": "人物"}, {"id": "part2-old-8", "part": "Part2", "status": "old", "date": "", "title": "擅长做计划的人", "en": "Describe a person who makes plans a lot and is good at planning", "questions": [], "cue": ["Who he/she is", "How you knew him/her", "What plans he/she makes", "And explain how you feel about this person"], "p3": ["Do you think it's important to plan ahead?", "What activities do we need to plan ahead?", "Do you think children should plan their future careers?", "Should children ask their teachers or parents for advice when making plans?", "Is making study plans popular among young people?", "Do you think choosing a college major is closely related to a future career?"], "titleKey": "擅长做计划的人", "category": "人物"}, {"id": "part2-old-9", "part": "Part2", "status": "old", "date": "", "title": "Apps/程序", "en": "Describe a program or app on your computer or phone", "questions": [], "cue": ["What it is", "When/how you use it", "Where you found it", "And explain how you feel about it"], "p3": ["What are the differences between old and young people when using apps?", "Why do some people not like using apps?", "What apps are popular in your country? Why?", "Should parents limit their children's use of computer programs and computer games?", "Do you think young people rely more and more on these programs?", "What do you think about some countries banning children from using social media?"], "titleKey": "Apps/程序", "category": "事物"}, {"id": "part2-old-10", "part": "Part2", "status": "old", "date": "", "title": "想拥有的科技产品", "en": "Describe a piece of technology (not a phone) that you would like to own", "questions": [], "cue": ["What it is", "How much it costs", "How you knew it", "And explain why you would like to own it"], "p3": ["What are the differences between the technology of the past and that of today?", "What technology do young people like to use?", "What are the differences between online and face-to-face communication?", "Do you think technology has changed the way people communicate?", "What negative effects does technology have on people's relationships?", "What are the differences between making friends in real life and online?"], "titleKey": "想拥有的科技产品", "category": "事物"}, {"id": "part2-old-11", "part": "Part2", "status": "old", "date": "", "title": "自行车/摩托车/汽车旅行（1.30）", "en": "Describe a bicycle/motorcycle/car trip you would like to take", "questions": [], "cue": ["Who you would like to go with", "Where you would like to go", "When you would like to go", "And explain why you would like to go by bicycle/motorcycle/car"], "p3": ["Which form of vehicle is more popular in your country, bikes, cars or motorcycles?", "Do you think air pollution comes mostly from motor vehicles?", "Do you think people need to change the way of transportation drastically to protect the environment?", "How are the transportation systems in urban areas and rural areas different?", "Why do more people own and drive private vehicles now?", "What do you think of the future of electric cars?"], "titleKey": "自行车/摩托车/汽车旅行", "category": "事物"}, {"id": "part2-old-12", "part": "Part2", "status": "old", "date": "", "title": "对家庭重要的东西", "en": "Describe something important that has been kept in your family for a long time", "questions": [], "cue": ["What it is", "When your family had it", "How your family got it", "And explain why it is important to your family"], "p3": ["What things do families keep for a long time?", "What's the difference between things valued by people in the past and today?", "What kinds of things are kept in museums?", "What's the influence of technology on museums?", "What are the benefits of technology for learning history?", "Why do people visit museums?"], "titleKey": "对家庭重要的东西", "category": "事物"}, {"id": "part2-old-13", "part": "Part2", "status": "old", "date": "", "title": "机智解决问题的人", "en": "Describe a person who solved a problem in a smart way", "questions": [], "cue": ["Who this person is", "What the problem was", "How he/she solved it", "And explain why you think he/she did it in a smart way"], "p3": ["Do you think children are born smart or do they learn to become smart?", "How do children become smart at school?", "Why are some people well-rounded and others only good at one thing?", "Why does modern society need talents of all kinds?", "Do you think smart children are happier than other children?", "Is it important for schools to identify and develop each student's talents?"], "titleKey": "机智解决问题的人", "category": "人物"}, {"id": "part2-old-14", "part": "Part2", "status": "old", "date": "", "title": "不享受的音乐活动", "en": "Describe an event you attended in which you didn't enjoy the music played", "questions": [], "cue": ["What it was", "Who you went with", "Why you decided to go there", "And explain why you didn't enjoy it"], "p3": ["What kind of music events do people like today?", "Do you think children should receive some musical education?", "What are the differences between old and young people's music preferences?", "What kind of music events are there in your country?", "Why do many people like listening to music while doing sports?", "What are the differences between listening to music at home and at a live concert?"], "titleKey": "不享受的音乐活动", "category": "经历"}, {"id": "part2-old-15", "part": "Part2", "status": "old", "date": "", "title": "近期观影", "en": "Describe a movie you watched and enjoyed recently", "questions": [], "cue": ["When and where you watched it", "Who you watched it with", "What it was about", "And explain why you watched this movie"], "p3": ["What kinds of movies do you think are successful in your country?", "What are the factors that make a successful movie?", "Do Chinese people prefer to watch domestic movies or foreign movies?", "Do you think only well-known directors can create the best movies?", "Do you think successful movies should have well-known actors or actresses in leading roles?", "Why do people prefer to watch movies in the cinema?"], "titleKey": "近期观影", "category": "事物"}, {"id": "part2-old-16", "part": "Part2", "status": "old", "date": "", "title": "朋友自学", "en": "Describe one of your friends who learned something without a teacher", "questions": [], "cue": ["Who he/she is", "What he/she learned", "Why he/she learned this", "And explain whether it would be easier to learn from a teacher"], "p3": ["Is it necessary to keep learning after graduating from school?", "Should teachers make learning in their classes fun?", "Do you think there are too many subjects for students to learn?", "Is it better to focus on a few subjects or to learn many subjects?", "Do you think enterprises should provide training for their employees?", "Do you think it is good for older adults to continue learning?"], "titleKey": "朋友自学", "category": "经历"}, {"id": "part2-old-17", "part": "Part2", "status": "old", "date": "", "title": "有趣的建筑", "en": "Describe an interesting building", "questions": [], "cue": ["Where it is", "What it looks like", "What function it has", "And explain why you think it is interesting"], "p3": ["What types of buildings are popular in your country?", "Is it worth spending a lot of money on the exterior appearance of a building?", "Is it more important for a building to look good on the outside or on the inside?", "Why do people like to visit historical sites?", "Do you think it's reasonable to charge an entry fee for visiting interesting buildings?", "Is it better to live in a new building or an old one?"], "titleKey": "有趣的建筑", "category": "地点"}, {"id": "part2-old-18", "part": "Part2", "status": "old", "date": "", "title": "发挥想象力", "en": "Describe a time you needed to use your imagination", "questions": [], "cue": ["When it was", "Why you needed to use imagination", "How difficult or easy it was", "And explain how you felt about it"], "p3": ["Do you think adults can have lots of imagination?", "Do you think imagination is essential for scientists?", "What kinds of jobs need imagination?", "What subjects are helpful for children's imagination?", "What games help develop children's imagination?", "How important is imagination to children?"], "titleKey": "发挥想象力", "category": "经历"}, {"id": "part2-old-19", "part": "Part2", "status": "old", "date": "", "title": "花费超过预期的物品", "en": "Describe an item on which you spent more than expected", "questions": [], "cue": ["What it is", "How much you spent on it", "Why you bought it", "And explain why you think you spent more than expected"], "p3": ["Do you often buy more than you expected?", "What do you think young people spend most of their money on?", "Do you think it is important to save money? Why?", "Do people buy things they don't need?", "Do you think it is the rich people's responsibility to donate money to people in need?", "What kind of things are people happy to pay a high price for?"], "titleKey": "花费超过预期的物品", "category": "事物"}, {"id": "part2-old-20", "part": "Part2", "status": "old", "date": "", "title": "乐于助人的人", "en": "Describe a person who often helps others", "questions": [], "cue": ["Who this person is", "How often he/she helps others", "How/why he/she helps others", "And how you feel about this person"], "p3": ["What can children do to help their parents?", "Should children help their parents with household chores?", "What kind of help do people need when looking for a new job?", "Who should people ask for help, colleagues or family members?", "Do you think schools should teach children to do household chores?", "Why are employees reluctant to ask their managers for help?"], "titleKey": "乐于助人的人", "category": "人物"}, {"id": "part2-old-21", "part": "Part2", "status": "old", "date": "", "title": "鼓励别人做不愿做的事", "en": "Describe a time when you encouraged someone to do something that he/she didn't want to do", "questions": [], "cue": ["Who he or she is", "What you encouraged him/her to do", "How he/she reacted", "And explain why you encouraged him/her to do it"], "p3": ["How can leaders encourage their employees?", "When should parents encourage their children?", "What kind of encouragement should parents give?", "Do you think some people are better than others at persuading?", "Should children do everything their parents ask them to do?", "How can employers encourage their staff?"], "titleKey": "鼓励别人做不愿做的事", "category": "经历"}, {"id": "part2-old-22", "part": "Part2", "status": "old", "date": "", "title": "想从事的短期海外工作", "en": "Describe a short-term job you want to have in a foreign country", "questions": [], "cue": ["Where it is", "How you know of it", "What the job is", "And explain why you want to do it"], "p3": ["What short-term jobs do young people do in other countries?", "What challenges do young people face when working abroad?", "What are the benefits of working for an international company?", "What personal skills are required to work in an international company?", "What kind of work can young people do in foreign countries?", "Why are some people unwilling to work in other countries?"], "titleKey": "想从事的短期海外工作", "category": "经历"}, {"id": "part2-old-23", "part": "Part2", "status": "old", "date": "", "title": "爱护自然的人", "en": "Describe a person who likes to look after the natural world​", "questions": [], "cue": ["Who this person is", "What he or she does", "How he or she does it", "How often he or she does it", "And explain how you feel about this person"], "p3": ["Do you think parents should teach their children how to protect the environment?", "What laws about the environment are effective in your country?", "Which do you think people prefer, rewards or punishment, when it comes to government intervention in environmental protection?", "Is it easy for children in cities to get close to the natural world?", "What can people do to protect the natural world?", "Is it important to teach students environmental protection at school?"], "titleKey": "爱护自然的人", "category": "人物"}, {"id": "part2-old-24", "part": "Part2", "status": "old", "date": "", "title": "去过且喜欢的城市", "en": "Describe a city you enjoyed visiting", "questions": [], "cue": ["Where it is", "When you visited it", "How long you stayed there", "What you did there", "And explain why you enjoyed visiting it"], "p3": ["What kinds of facilities do big cities have?", "Do you think modern cities are suitable for young people or old people?", "Before you travel to a city, what factors would you consider?", "What are the disadvantages of living in a very famous city?", "Do you prefer to visit well-developed cities or cities with a long history?", "For those who live in cities, is it because they want to or have to?"], "titleKey": "去过且喜欢的城市", "category": "地点"}, {"id": "part2-old-25", "part": "Part2", "status": "old", "date": "", "title": "购物场所", "en": "Describe a place where you enjoy shopping", "questions": [], "cue": ["Where it is", "How often you visit it", "What you usually buy at the mall", "And explain why it is a good place for shopping"], "p3": ["Why do people buy things they don’t need?", "Do you think it’s a waste of time to go shopping?", "Why are some people keen on shopping?", "What kind of people like shopping?", "Where do people like to shop in your country?", "Do you think women like shopping more than men?", "Does spending money make people feel happy?", "What are the differences between shopping in street markets and big shopping malls?", "What are the differences in the shopping habits of different age groups?", "What are the differences between shopping online and in-store?", "Do you think people's spending habits can lead to peer pressure?"], "titleKey": "购物场所", "category": "地点"}, {"id": "part2-old-26", "part": "Part2", "status": "old", "date": "", "title": "安静的地方", "en": "Describe a quiet place you like to go", "questions": [], "cue": ["Where it is", "How you knew it", "How often you go there", "What you do there", "And explain how you feel about the place"], "p3": ["Is it easy to find quiet places in your country? Why?", "Why do old people prefer to live in quiet places?", "Why are there more noises made at home now than in the past?", "Why do some people like to use noise as background sound when they are working or studying?", "How do people spend their leisure time in your country?", "How does technology affect the way people spend their leisure time?", "Do you think only old people have time for leisure?"], "titleKey": "安静的地方", "category": "地点"}, {"id": "part2-old-27", "part": "Part2", "status": "old", "date": "", "title": "喜欢的电视/网络节目", "en": "Describe a TV/online program you enjoy watching", "questions": [], "cue": ["What it is", "What it is about", "Which country it is from", "When you watch it", "And explain why you like to watch it"], "p3": ["What programs do people like to watch in your country?", "Do people in your country like to watch foreign TV programs?", "What's the benefit of letting kids watch animal videos than visiting zoos?", "Do teachers play videos in class in your country?", "Do you think watching talk shows is a waste of time?", "Do you think we can acquire knowledge from watching TV programs?", "What are the differences between the TV programs young people like to watch and those old people like to watch?", "What makes a popular TV or online program?"], "titleKey": "喜欢的电视/网络节目", "category": "事物"}];
+const COLORS = {
+  '人物': {dot:'#4B7CF3', bg:'#EEF3FF', text:'#2E5AC8'},
+  '地点': {dot:'#2CC595', bg:'#E6FAF5', text:'#1A8C68'},
+  '经历': {dot:'#F5A623', bg:'#FEF6E6', text:'#B87A10'},
+  '事物': {dot:'#FF6B5B', bg:'#FFF0EE', text:'#CC3A2A'},
+  '其他': {dot:'#7A7A8A', bg:'#F3F3F5', text:'#60606A'}
+};
+const STATUS_LABEL = {new:'本季新题', old:'保留话题', required:'必考话题'};
+const state = {part:'Part2', status:'全部', cat:'全部', q:''};
+
+function esc(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+
+function colorFor(cat) {
+  return COLORS[cat] || COLORS['其他'];
+}
+
+function badgeClass(status) {
+  if (status === 'old') return 'badge old';
+  if (status === 'required') return 'badge required';
+  return 'badge';
+}
+
+function matches(item) {
+  const partOk = state.part === '全部' || item.part === state.part;
+  const statusOk = state.status === '全部' || item.status === state.status;
+  const catOk = state.cat === '全部' || item.category === state.cat;
+  const q = state.q.trim().toLowerCase();
+  const haystack = [
+    item.title, item.titleKey, item.en,
+    ...(item.questions || []), ...(item.cue || []), ...(item.p3 || [])
+  ].join(' ').toLowerCase();
+  const queryOk = !q || haystack.includes(q);
+  return partOk && statusOk && catOk && queryOk;
+}
+
+function cardHTML(item) {
+  const c = colorFor(item.category);
+  const title = item.titleKey || item.title;
+  const subtitle = item.part === 'Part2' ? item.en : `${item.questions.length} 个 Part1 问题`;
+  const tags = item.part === 'Part2'
+    ? [...item.cue.slice(0, 2), `${item.p3.length} 个 Part3 问题`]
+    : item.questions.slice(0, 3);
+  return `<article class="card" style="--cat-color:${c.dot}" onclick="openModal('${item.id}')">
+    <div class="card-top">
+      <h2 class="card-title"><span class="dot"></span>${esc(title)}</h2>
+      <span class="${badgeClass(item.status)}">${esc(STATUS_LABEL[item.status])}</span>
+    </div>
+    <div class="card-en">${esc(subtitle)}</div>
+    <div class="card-tags">${tags.map(tag => `<span class="tag">${esc(tag)}</span>`).join('')}</div>
+    <div class="card-arrow">查看详情 →</div>
+  </article>`;
+}
+
+function render() {
+  const content = document.getElementById('content');
+  const filtered = TOPICS.filter(matches);
+  document.getElementById('resultCount').textContent = `${filtered.length} / ${TOPICS.length} 题`;
+  const partText = state.part === '全部' ? '全部模块' : (state.part === 'Part2' ? 'Part2 + Part3' : 'Part1');
+  const statusText = state.status === '全部' ? '全部' : STATUS_LABEL[state.status];
+  const catText = state.cat === '全部' ? '全部主题' : state.cat;
+  document.getElementById('viewLabel').textContent = `${partText} / ${statusText} / ${catText}`;
+  if (!filtered.length) {
+    content.innerHTML = '<div class="empty">没有找到相关话题</div>';
+    return;
+  }
+  if (state.cat === '全部' && !state.q) {
+    const groups = ['人物','地点','经历','事物','其他'];
+    content.innerHTML = groups.map(cat => {
+      const items = filtered.filter(item => item.category === cat);
+      if (!items.length) return '';
+      const c = colorFor(cat);
+      return `<section>
+        <div class="group-header">
+          <span class="group-dot" style="background:${c.dot}"></span>
+          <span class="group-label">${cat} · ${items.length}</span>
+          <span class="group-line"></span>
+        </div>
+        <div class="grid">${items.map(cardHTML).join('')}</div>
+      </section>`;
+    }).join('');
+  } else {
+    content.innerHTML = `<div class="grid">${filtered.map(cardHTML).join('')}</div>`;
+  }
+}
+
+function modalList(items) {
+  return `<div class="question-list">${items.map((item, idx) => `<div class="question-item"><span class="num">${idx + 1}</span><span>${esc(item)}</span></div>`).join('')}</div>`;
+}
+
+function openModal(id) {
+  const item = TOPICS.find(topic => topic.id === id);
+  if (!item) return;
+  const c = colorFor(item.category);
+  const body = document.getElementById('modalBody');
+  const title = item.titleKey || item.title;
+  let inner = `<div class="modal-meta" style="--cat-bg:${c.bg};--cat-text:${c.text}">
+      <span class="dot" style="background:${c.dot}"></span>${item.part} · ${esc(item.category)} · ${esc(STATUS_LABEL[item.status])}${item.date ? ' · ' + esc(item.date) : ''}
+    </div>
+    <h2 class="modal-title">${esc(title)}</h2>`;
+  if (item.part === 'Part2') {
+    inner += `<div class="modal-en">${esc(item.en)}</div>
+      <div class="modal-section-title">Cue Card — You should say</div>
+      <div class="cue-card"><ul>${item.cue.map(point => `<li>${esc(point)}</li>`).join('')}</ul></div>
+      <div class="modal-section-title">Part 3 — Discussion Questions</div>
+      ${modalList(item.p3)}`;
+  } else {
+    inner += `<div class="modal-en">Part1 questions</div>
+      <div class="modal-section-title">Questions</div>
+      ${modalList(item.questions)}`;
+  }
+  body.innerHTML = inner;
+  document.getElementById('overlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(event) {
+  if (event && event.target !== document.getElementById('overlay') && event.target.id !== 'modalClose') return;
+  document.getElementById('overlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('partTabs').addEventListener('click', event => {
+  const tab = event.target.closest('.tab');
+  if (!tab) return;
+  state.part = tab.dataset.part;
+  document.querySelectorAll('.tab').forEach(el => el.classList.toggle('active', el === tab));
+  render();
+});
+
+document.getElementById('statusFilters').addEventListener('click', event => {
+  const chip = event.target.closest('.chip');
+  if (!chip) return;
+  state.status = chip.dataset.status;
+  document.querySelectorAll('#statusFilters .chip').forEach(el => el.classList.toggle('active', el === chip));
+  render();
+});
+
+document.getElementById('catFilters').addEventListener('click', event => {
+  const chip = event.target.closest('.chip');
+  if (!chip) return;
+  state.cat = chip.dataset.cat;
+  document.querySelectorAll('#catFilters .chip').forEach(el => el.classList.toggle('active', el === chip));
+  render();
+});
+
+document.getElementById('searchInput').addEventListener('input', event => {
+  state.q = event.target.value;
+  render();
+});
+document.getElementById('clearBtn').addEventListener('click', () => {
+  state.q = '';
+  document.getElementById('searchInput').value = '';
+  render();
+});
+document.getElementById('overlay').addEventListener('click', closeModal);
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeModal();
+});
+
+render();
+</script>
+</body>
+</html>
